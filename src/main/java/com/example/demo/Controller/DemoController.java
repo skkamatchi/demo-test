@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/demo")
 public class DemoController {
@@ -16,7 +18,7 @@ public class DemoController {
     private DemoService demoService;
 
     @PostMapping
-    public String topSecond(@RequestBody String str) {
-        return demoService.fetchTopSecond(str);
+    public String topSecond(@RequestBody List<Integer> listValues) {
+        return demoService.fetchTopSecond(listValues);
     }
 }
